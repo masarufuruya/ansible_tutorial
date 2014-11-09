@@ -1,0 +1,15 @@
+---
+- hosts: db
+  sudo: yes
+  user: vagrant
+  tasks:
+    - name: yum install mysql
+      yum: name={{ item }} state=latest
+      with_items:
+        - mysql
+        - mysql-server
+      notify:
+      - restart mysql
+  handlers:
+    - name: restart mysql
+      action: service name=mysqld state=restarted
