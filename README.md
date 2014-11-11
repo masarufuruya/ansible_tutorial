@@ -13,6 +13,7 @@ git clone git@github.com:masarufuruya/ansible_tutorial.git
 初回はイメージのダウンロード・セットアップが行われるため、数分程度の時間がかかります。
 
 ```
+cd ansible_tutorial
 vagrant plugin install vagrant-vbguest
 vagrant up
 ```
